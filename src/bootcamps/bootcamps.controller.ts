@@ -8,7 +8,7 @@ export class BootcampsController {
   constructor(private readonly bootcampsService: BootcampsService) {}
 
   @Post()
-  create(@Body() createBootcampDto: any) {
+  create(@Body() createBootcampDto: CreateBootcampDto) {
     //return createBootcampDto;
     return this.bootcampsService.create(createBootcampDto);
   }
@@ -24,7 +24,7 @@ export class BootcampsController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateBootcampDto: any) {
+  update(@Param('id') id: string, @Body() updateBootcampDto: UpdateBootcampDto) {
 
     return this.bootcampsService.update(+id, updateBootcampDto);
   }

@@ -11,7 +11,7 @@ export class BootcampsService {
 
   constructor(@InjectRepository(Bootcamp) private bootcampRepository: Repository<Bootcamp>){}
 
-  create(createBootcampDto: any) {
+  create(createBootcampDto: CreateBootcampDto) {
    
     const nuevoBootcamp =
     this.bootcampRepository.create(createBootcampDto);
@@ -30,12 +30,12 @@ export class BootcampsService {
 
   
 
-  async update(id: number, updateBootcampDto: any) {
+  async update(id: number, updateBootcampDto: UpdateBootcampDto) {
   
     const updBootcamp = await this.bootcampRepository.findOneBy({id:id})
     await this.bootcampRepository.merge(updBootcamp, updateBootcampDto)
     return this.bootcampRepository.save(updBootcamp
-      
+
     )
   
   }
