@@ -9,7 +9,7 @@ export class BootcampsController {
 
   @Post()
   create(@Body() createBootcampDto: CreateBootcampDto) {
-    //return createBootcampDto;
+    
     return this.bootcampsService.create(createBootcampDto);
   }
 

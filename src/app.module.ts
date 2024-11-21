@@ -16,9 +16,9 @@ import { UsersModule } from './users/users.module';
       password: 'admin',
       database: 'MariaDB2902081',
       entities: [],
-      synchronize: false,
+      synchronize: true,
       autoLoadEntities: true,
-      //dropSchema: true
+      dropSchema: true
     }),
     BootcampsModule,
     CoursesModule,

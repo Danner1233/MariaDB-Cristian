@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Bootcamp } from "src/bootcamps/entities/bootcamp.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Course {
@@ -23,6 +24,10 @@ export class Course {
 
     @Column({  type: "timestamp", default: () => "CURRENT_TIMESTAMP", name:"created_at"})
     createdAt: Date
+
+
+    @ManyToOne(()=> Bootcamp, ( bootcamp: Bootcamp )=> bootcamp.cursos )
+    bootcamp: Bootcamp
 }
 
 enum minimumSkill{

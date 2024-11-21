@@ -5,7 +5,18 @@ meta {
 }
 
 patch {
-  url: 
-  body: none
+  url: http://localhost:3000/review/23
+  body: json
   auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name":"jijijija"
+    
+  }   
 }

@@ -6,6 +6,21 @@ meta {
 
 post {
   url: http://localhost:3000/bootcamps
-  body: none
+  body: json
   auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  
+  {
+      "phone": 1234567891,
+      "name": "Fundamentos JS",
+      "address": "Casa de alexix",
+      "topics": "WEB, jS",
+      "createdAt": "2024-11-07T05:00:00.000Z"
+    }
 }

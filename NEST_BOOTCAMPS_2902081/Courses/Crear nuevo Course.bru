@@ -1,0 +1,27 @@
+meta {
+  name: Crear nuevo Course
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/Courses
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "Courses",
+    "description": "hola",
+    "weeks": 3,
+    "tuition": 12,
+    "minimumSkill": "Beginner",
+    "createdAt": "2024-11-21T10:00:00Z"
+  }
+  
+}

@@ -5,7 +5,17 @@ meta {
 }
 
 patch {
-  url: 
-  body: none
+  url: http://localhost:3000/reviews/3
+  body: json
   auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "Analitica de datos"
+  }
 }

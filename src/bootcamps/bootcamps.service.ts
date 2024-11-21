@@ -28,7 +28,6 @@ export class BootcampsService {
   }
 
 
-  
 
   async update(id: number, updateBootcampDto: UpdateBootcampDto) {
   
@@ -40,18 +39,16 @@ export class BootcampsService {
   
   }
 
-
   async remove(id: number) {
  
     const bootcamp = await this.bootcampRepository.findOneBy({ id });
 
     if (!bootcamp){
-      return `El bootcamp #${id} no exite.`;
+      return `El Bootcamp con el id: ${id}, no exite.`;
     }
   
+    await this.bootcampRepository.delete(id); 
 
-    await this.bootcampRepository.delete(id);
-
-    return `Bootcamp #${id} ha sido eliminado.`;
+    return `El Bootcamp con el id: ${id}, ha sido eliminado.`;
   }
 }
